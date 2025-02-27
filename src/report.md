@@ -9,25 +9,21 @@
 - Проверь наличие докер-образа через docker images.  
 <figure>
     <img src="./screen/1_2.png" />
-    <figcaption>провеярем наличие образа</figcaption>
 </figure>
 
 - Запусти докер-образ через docker run -d [image_id|repository].  
 <figure>
     <img src="./screen/1_3.png" />
-    <figcaption>запуск докер-образа</figcaption>
 </figure>
 
 - Проверь, что образ запустился через docker ps.  
 <figure>
     <img src="./screen/1_4.png" />
-    <figcaption>вывод docker ps</figcaption>
 </figure>
 
 - Посмотри информацию о контейнере через docker inspect [container_id|container_name].
 <figure>
     <img src="./screen/1_5.png" />
-    <figcaption>вывод docker inspect</figcaption>
 </figure>
 
 - По выводу команды определи и помести в отчёт размер контейнера, список замапленных портов и ip контейнера.
@@ -53,14 +49,12 @@
 - Проверь, что в браузере по адресу localhost:80 доступна стартовая страница nginx.
 <figure>
     <img src="./screen/1_11.png" />
-    <figcaption>страница есть</figcaption>
 </figure>
 
 - Перезапусти докер контейнер через docker restart [container_id|container_name].  
 - Проверь любым способом, что контейнер запустился.  
 <figure>
     <img src="./screen/1_12.png" />
-    <figcaption>перезапускаем докер и вывод docker ps</figcaption>
 </figure>
 
 ## Part 2. Операции с контейнером  
@@ -68,76 +62,64 @@
 - Прочитай конфигурационный файл nginx.conf внутри докер контейнера через команду exec.  
 <figure>
     <img src="./screen/2_1.png" />
-    <figcaption>читаем конфиг файл</figcaption>
 </figure> 
 
 - Создай на локальной машине файл nginx.conf.  
 - Настрой в нем по пути /status отдачу страницы статуса сервера nginx.  
 <figure>
     <img src="./screen/2_2.png" />
-    <figcaption>создаем на локальной машине конфиг файл</figcaption>
 </figure> 
 
 
 - Скопируй созданный файл nginx.conf внутрь докер-образа через команду docker cp.  
 <figure>
     <img src="./screen/2_3.png" />
-    <figcaption>копируем конфиг файл</figcaption>
 </figure> 
 
 - Перезапусти nginx внутри докер-образа через команду exec.  
 <figure>
     <img src="./screen/2_4.png" />
-    <figcaption>перезапускаем nginx</figcaption>
 </figure> 
 
 - Проверь, что по адресу localhost:80/status отдается страничка со статусом сервера nginx.  
 <figure>
     <img src="./screen/2_5.png" />
-    <figcaption>открывем страницу</figcaption>
 </figure> 
 
 - Экспортируй контейнер в файл container.tar через команду export.  
 <figure>
     <img src="./screen/2_6.png" />
-    <figcaption>экспортирую контейнер</figcaption>
 </figure> 
 
 - Останови контейнер.  
 <figure>
     <img src="./screen/2_7.png" />
-    <figcaption>останавливаю контейнер</figcaption>
 </figure> 
 
 - Удали образ через docker rmi [image_id|repository], не удаляя перед этим контейнеры.  
 <figure>
     <img src="./screen/2_8.png" />
-    <figcaption>удаляю образ через docker rmi</figcaption>
 </figure> 
 
 - Удали остановленный контейнер.  
 <figure>
     <img src="./screen/2_9.png" />
     <img src="./screen/2_10.png" />
-    <figcaption>удаляю контейнер</figcaption>
 </figure> 
 
 - Импортируй контейнер обратно через команду import.  
 <figure>
     <img src="./screen/2_11.png" />
-    <figcaption>docker import</figcaption>
 </figure> 
 
 - Запусти импортированный контейнер.  
 <figure>
     <img src="./screen/2_12.png" />
-    <figcaption>docker run</figcaption>
 </figure> 
 
 - Проверь, что по адресу localhost:80/status отдается страничка со статусом сервера nginx.  
 <figure>
     <img src="./screen/2_13.png" />
-    <figcaption>содержание страницы</figcaption>
 </figure> 
 
 ## Part 3. Мини веб-сервер  
@@ -171,7 +153,6 @@ apt-get install gcc
 - Проверь, что в браузере по localhost:81 отдается написанная тобой страничка.  
 <figure>
     <img src="screen/3_10.png" />
-    <figcaption>содержание страницы</figcaption>
 </figure> 
 
 - Положи файл nginx.conf по пути ./nginx/nginx.conf (это понадобится позже).   
@@ -195,25 +176,21 @@ apt-get install gcc
 <figure>
     <img src="screen/4_3.png" />
     <img src="screen/4_4.png" />
-    <figcaption>собираю</figcaption>
 </figure> 
 
 Проверь через docker images, что все собралось корректно.  
 <figure>
     <img src="screen/4_5.png" />
-    <figcaption>docker images</figcaption>
 </figure> 
 
 Запусти собранный докер-образ с маппингом 81 порта на 80 на локальной машине и маппингом папки ./nginx внутрь контейнера по адресу, где лежат конфигурационные файлы nginx'а (см. Часть 2).  
 <figure>
     <img src="screen/4_6.png" />
-    <figcaption>запускаю образ</figcaption>
 </figure> 
 
 Проверь, что по localhost:80 доступна страничка написанного мини сервера.  
 <figure>
     <img src="screen/4_8.png" />
-    <figcaption>содержание страницы</figcaption>
 </figure> 
 
 Допиши в ./nginx/nginx.conf проксирование странички /status, по которой надо отдавать статус сервера nginx.  
@@ -236,7 +213,6 @@ apt-get install gcc
 <figure>
     <img src="screen/5_6.png" />
     <img src="screen/5_7.png" />
-    <figcaption>сканирую образ через dockle (пришлось запушить на docker hub, иначе не работало)</figcaption>
 </figure>  
 
 
@@ -264,14 +240,12 @@ apt-get install gcc
 
 <figure>
     <img src="screen/6_1.png" />
-    <figcaption>поднял докер-контейнер из Части 5</figcaption>
 </figure>  
 
 2) Подними докер-контейнер с nginx, который будет проксировать все запросы с 8080 порта на 81 порт первого контейнера.
 
 <figure>
     <img src="screen/6_2.png" />
-    <figcaption>поднял докер-контейнер с nginx</figcaption>
 </figure>  
 
 - Замапь 8080 порт второго контейнера на 80 порт локальной машины.
@@ -284,7 +258,6 @@ apt-get install gcc
 - Останови все запущенные контейнеры.  
 <figure>
     <img src="screen/6_4.png" />
-    <figcaption>остановил</figcaption>
 </figure>  
 
 - Собери и запусти проект с помощью команд docker-compose build и docker-compose up.  
@@ -302,5 +275,4 @@ apt-get install gcc
 - Проверь, что в браузере по localhost:80 отдается написанная тобой страничка, как и ранее.  
 <figure>
     <img src="screen/6_8.png" />
-    <figcaption>показываю, что контейнеры запустились, затем содержание страницы</figcaption>
 </figure> 
